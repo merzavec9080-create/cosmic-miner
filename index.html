@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cosmic Miner ⛏️</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="stars-bg"></div>
+    <div id="app">
+        <header id="header">
+            <div class="header-left">
+                <div class="coin-display">
+                    <span class="coin-icon">💎</span>
+                    <span id="coins-display">0</span>
+                </div>
+                <div class="level-display">
+                    <span class="level-icon">⭐</span>
+                    <span id="level-display">Lv. 1</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <button id="btn-shop" class="header-btn">🛒</button>
+                <button id="btn-friends" class="header-btn">👥</button>
+                <button id="btn-stats" class="header-btn">📊</button>
+            </div>
+        </header>
+        <div id="energy-bar-container">
+            <div id="energy-bar">
+                <div id="energy-fill" style="width: 100%;"></div>
+            </div>
+            <span id="energy-text">1000 / 1000 ⚡</span>
+        </div>
+        <div id="tap-area">
+            <div id="asteroid-container">
+                <div id="asteroid-glow"></div>
+                <div id="asteroid" role="button" aria-label="Тапни!">
+                    <span class="asteroid-emoji">🪨</span>
+                </div>
+                <div id="tap-particles"></div>
+            </div>
+            <div id="tap-info">
+                <span id="per-tap">+1 💎 за тап</span>
+            </div>
+        </div>
+        <nav id="bottom-nav">
+            <button class="nav-btn active" data-tab="mine">
+                <span class="nav-icon">⛏️</span>
+                <span class="nav-label">Добыча</span>
+            </button>
+            <button class="nav-btn" data-tab="upgrades">
+                <span class="nav-icon">🔧</span>
+                <span class="nav-label">Апгрейды</span>
+            </button>
+            <button class="nav-btn" data-tab="boosts">
+                <span class="nav-icon">🚀</span>
+                <span class="nav-label">Бусты</span>
+            </button>
+            <button class="nav-btn" data-tab="friends">
+                <span class="nav-icon">👥</span>
+                <span class="nav-label">Друзья</span>
+            </button>
+        </nav>
+    </div>
+    <div id="panel-upgrades" class="panel hidden">
+        <div class="panel-header">
+            <h2>🔧 Апгрейды</h2>
+            <button class="panel-close">×</button>
+        </div>
+        <div class="panel-body" id="upgrades-list"></div>
+    </div>
+    <div id="panel-boosts" class="panel hidden">
+        <div class="panel-header">
+            <h2>🚀 Бусты</h2>
+            <button class="panel-close">×</button>
+        </div>
+        <div class="panel-body">
+            <div class="boost-card" data-boost="energy-refill">
+                <div class="boost-icon">⚡</div>
+                <div class="boost-info">
+                    <h3>Полная энергия</h3>
+                    <p>Мгновенно восстановить всю энергию</p>
+                </div>
+                <button class="boost-buy" data-stars="25">25 ⭐</button>
+            </div>
+        </div>
+    </div>
+    <div id="panel-friends" class="panel hidden">
+        <div class="panel-header">
+            <h2>👥 Друзья</h2>
+            <button class="panel-close">×</button>
+        </div>
+        <div class="panel-body">
+            <div class="referral-info">
+                <h3>Пригласи друга — получи бонус!</h3>
+                <button id="btn-invite" class="btn-primary">📤 Пригласить друга</button>
+            </div>
+            <div id="friends-list"></div>
+        </div>
+    </div>
+    <div id="panel-stats" class="panel hidden">
+        <div class="panel-header">
+            <h2>📊 Статистика</h2>
+            <button class="panel-close">×</button>
+        </div>
+        <div class="panel-body">
+            <div class="stat-row"><span>Всего тапов:</span><span id="stat-taps">0</span></div>
+        </div>
+    </div>
+    <script src="js/telegram.js"></script>
+    <script src="js/upgrades.js"></script>
+    <script src="js/app.js"></script>
+</body></html>
